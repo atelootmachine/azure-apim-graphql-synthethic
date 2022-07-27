@@ -1,0 +1,24 @@
+
+licies>
+    <inbound>
+        <!--<base />-->
+    </inbound>
+    <backend>
+        <!--<base />-->
+        <set-graphql-resolver parent-type="Query" field="getip">
+            <http-data-source>
+                <http-request>
+                    <set-method>GET</set-method>
+                    <set-url>https://api.ipify.org/?format=json</set-url>
+                </http-request>
+            </http-data-source>
+        </set-graphql-resolver>
+        <forward-request timeout="3" />
+    </backend>
+    <outbound>
+        <!--<base />-->
+    </outbound>
+    <on-error>
+        <!--<base />-->
+    </on-error>
+</policies>

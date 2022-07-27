@@ -1,0 +1,7 @@
+type Query {
+  getip: IPAddress
+}
+
+type IPAddress{
+  ip: String!
+}
